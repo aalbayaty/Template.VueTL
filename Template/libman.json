@@ -1,0 +1,23 @@
+{
+  "version": "1.0",
+  "defaultProvider": "unpkg",
+  "libraries": [
+    {
+      "library": "vue@2.5.21",
+      "destination": "wwwroot/lib/vue/"
+    },
+    {
+      "library": "bootstrap-vue@2.0.0-rc.9",
+      "destination": "wwwroot/lib/bootstrap-vue/"
+    },
+    {
+      "library": "bootstrap@4.2.1",
+      "destination": "wwwroot/lib/bootstrap/"
+    },
+    {
+      "library": "babel-polyfill@7.0.0-beta.3",
+      "destination": "wwwroot/lib/babel-polyfill"
+
+    }
+  ]
+}
