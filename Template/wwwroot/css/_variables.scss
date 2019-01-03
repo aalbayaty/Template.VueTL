@@ -1,0 +1,80 @@
+﻿@import "mixins";
+/*************************************************************
+*						App Variables
+**************************************************************/
+
+
+/*************************************************************
+*					  Colors Definitions
+**************************************************************/
+
+$grid-breakpoints: () !default;
+// stylelint-disable-next-line scss/dollar-variable-default
+$grid-breakpoints: map-merge(
+  (
+    xs: 0,
+    sm: 576px,
+    md: 768px,
+    lg: 992px,
+    xl: 1200px
+  ),
+  $grid-breakpoints
+);
+
+$color-primary: #85CE36 !default;
+$color-primary-light: lighten($color-primary, 10%) !default;
+$color-primary-lighter: lighten($color-primary-light, 6%) !default;
+$color-primary-dark: darken($color-primary, 10%) !default;
+$color-primary-darker: darken($color-primary-dark, 6%) !default;
+
+$color-divider: #d7dde4 !default;
+$color-bg: #f0f3f6 !default;
+
+$color-inverse: #131e26 !default;
+$color-text-inverse: #ffffff !default;
+
+/*************************************************************
+*					Common Element Variables
+**************************************************************/
+
+// Links
+$link-color: #969696 !default;
+$link-transition: initial;
+$link-decoration: underline;
+
+$link-hover-color: darken($color-primary, 8%) !default;
+$link-hover-decoration: underline !default;
+
+// Header
+$header-height: 70px !default;
+$header-height-xs: 50px !default;
+
+// Sidebar
+$sidebar-width: 240px !default;
+
+// Footer
+$footer-height: 50px !default;
+
+$sidebar-color-primary: #ffffff !default;
+$sidebar-color-secondary: darken($sidebar-color-primary, 6%) !default;
+
+$sidebar-color-text: fade-out($color-text-inverse, 0.5) !default;
+$sidebar-color-text-active: $color-text-inverse;
+
+
+
+// Content
+$content-padding-x-xl: 40px !default;
+$content-padding-y-xl: 35px !default;
+
+$content-padding-x-lg: 35px !default;
+$content-padding-y-lg: 30px !default;
+
+$content-padding-x-md: 20px !default;
+$content-padding-y-md: 25px !default;
+
+$content-padding-x-sm: 20px !default;
+$content-padding-y-sm: 20px !default;
+
+$content-padding-x-xs: 10px !default;
+$content-padding-y-xs: 15px !default;

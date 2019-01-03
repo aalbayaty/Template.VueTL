@@ -2,3 +2,11 @@
 // for details on configuring this project to bundle and minify static web assets.
 
 // Write your JavaScript code.
+
+
+//var navigation = new Vue({
+//    el: '#navigation',
+//    data: {
+//        message: 'Hello Vue!'
+//    }
+//});

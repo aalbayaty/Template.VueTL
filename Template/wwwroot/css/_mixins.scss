@@ -1,0 +1,139 @@
+﻿@import "../lib/bootstrap/scss/mixins/breakpoints";
+@import "../lib/bootstrap/scss/mixins/clearfix";
+
+// /*****************************************
+// *		Triangle Creation Mixin
+// ******************************************/
+
+// @mixin triangle-base() {
+//     content: '';
+//     display: block;
+//     width: 0;
+//     height: 0;
+//     -moz-transform: scale(.9999);
+// }
+// @mixin triangle($direction, $size, $color) {
+//     @include triangle($direction, $size * 2, $size, $color);
+// }
+// @mixin triangle($direction, $width, $height, $color) when ($direction = up) {
+//     @include triangle-base();
+//     border-left: ($width / 2) solid transparent;
+//     border-right: ($width / 2) solid transparent;
+//     border-bottom: $height solid $color;
+// }
+// @mixin triangle($direction, $width, $height, $color) when ($direction = down) {
+//     @include triangle-base();
+//     border-left: ($width / 2) solid transparent;
+//     border-right: ($width / 2) solid transparent;
+//     border-top: $height solid $color;
+// }
+// @mixin triangle($direction, $width, $height, $color) when ($direction = left) {
+//     @include triangle-base();
+//     border-top: ($width / 2) solid transparent;
+//     border-bottom: ($width / 2) solid transparent;
+//     border-right: $height solid $color;
+// }
+// @mixin triangle($direction, $width, $height, $color) when ($direction = right) {
+//     @include triangle-base();
+//     border-top: ($width / 2) solid transparent;
+//     border-bottom: ($width / 2) solid transparent;
+//     border-left: $height solid $color;
+// }
+
+
+/*****************************************
+*       Background-image: cover mixin
+******************************************/
+
+@mixin _assert-ascending($map, $map-name) {
+    $prev-key: null;
+    $prev-num: null;
+
+    @each $key, $num in $map {
+        @if $prev-num == null or unit($num) == "%" {
+            // Do nothing
+        }
+        @else if not comparable($prev-num, $num) {
+            @warn "Potentially invalid value for #{$map-name}: This map must be in ascending order, but key '#{$key}' has value #{$num} whose unit makes it incomparable to #{$prev-num}, the value of the previous key '#{$prev-key}' !";
+        }
+        @else if $prev-num >= $num {
+            @warn "Invalid value for #{$map-name}: This map must be in ascending order, but key '#{$key}' has value #{$num} which isn't greater than #{$prev-num}, the value of the previous key '#{$prev-key}' !";
+        }
+
+        $prev-key: $key;
+        $prev-num: $num;
+    }
+}
+
+// Starts at zero
+// Another grid mixin that ensures the min-width of the lowest breakpoint starts at 0.
+@mixin _assert-starts-at-zero($map) {
+    $values: map-values($map);
+    $first-value: nth($values, 1);
+
+    @if $first-value != 0 {
+        @warn "First breakpoint in `$grid-breakpoints` must start at 0, but starts at #{$first-value}.";
+    }
+}
+
+
+@mixin bg-cover() {
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+/*****************************************
+*       Media Query Mixins
+******************************************/
+
+// Specified breakpoint
+@mixin media($name) {
+    @include media-breakpoint-only($name) {
+        @content;
+    }
+}
+
+// Larger than specified breakpoint
+@mixin media-up($name) {
+    @include media-breakpoint-up($name) {
+        @content;
+    }
+}
+
+// smaller than specified breakpoint
+@mixin media-down($name) {
+    @include media-breakpoint-down($name) {
+        @content;
+    }
+}
+
+// /******************************************
+// *           Placeholder
+// *******************************************/
+@mixin placeholder() {
+    &::-webkit-input-placeholder { /* WebKit, Blink, Edge */
+        @content;
+    }
+
+    &:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+        @content;
+    }
+
+    &::-moz-placeholder { /* Mozilla Firefox 19+ */
+        @content;
+    }
+
+    &:-ms-input-placeholder { /* Internet Explorer 10-11 */
+        @content;
+    }
+}
+
+
+// /******************************************
+// *           Hardware Acceleration
+// *******************************************/
+
+@mixin accelerate() {
+    transform: translate3d(0, 0, 0);
+}

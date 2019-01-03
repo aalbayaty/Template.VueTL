@@ -1,56 +1,318 @@
-﻿/* Please see documentation at https://docs.microsoft.com/aspnet/core/client-side/bundling-and-minification
-for details on configuring this project to bundle and minify static web assets. */
-
-a.navbar-brand {
-  white-space: normal;
-  text-align: center;
-  word-break: break-all;
-}
-
-/* Sticky footer styles
--------------------------------------------------- */
-html {
-  font-size: 14px;
-}
-@media (min-width: 768px) {
-  html {
-    font-size: 16px;
-  }
-}
-
-.border-top {
-  border-top: 1px solid #e5e5e5;
-}
-.border-bottom {
-  border-bottom: 1px solid #e5e5e5;
-}
-
-.box-shadow {
-  box-shadow: 0 .25rem .75rem rgba(0, 0, 0, .05);
-}
-
-button.accept-policy {
-  font-size: 1rem;
-  line-height: inherit;
-}
-
-/* Sticky footer styles
--------------------------------------------------- */
-html {
-  position: relative;
-  min-height: 100%;
-}
-
-body {
-  /* Margin bottom by footer height */
-  margin-bottom: 60px;
-}
-.footer {
+﻿/*****************************************
+*       Background-image: cover mixin
+******************************************/
+/*****************************************
+*       Media Query Mixins
+******************************************/
+/*************************************************************
+*						App Variables
+**************************************************************/
+/*************************************************************
+*					  Colors Definitions
+**************************************************************/
+/*************************************************************
+*					Common Element Variables
+**************************************************************/
+/*****************************************
+*       Background-image: cover mixin
+******************************************/
+/*****************************************
+*       Media Query Mixins
+******************************************/
+/*************************************************************
+*						App Variables
+**************************************************************/
+/*************************************************************
+*					  Colors Definitions
+**************************************************************/
+/*************************************************************
+*					Common Element Variables
+**************************************************************/
+/*****************************************
+*       Background-image: cover mixin
+******************************************/
+/*****************************************
+*       Media Query Mixins
+******************************************/
+.sidebar {
+  background-color: #ffffff;
+  width: 240px;
+  padding-bottom: 60px;
   position: absolute;
+  top: 0;
+  left: 0;
   bottom: 0;
-  width: 100%;
+  transition: left 0.3s ease;
+  z-index: 20; }
+  @media (max-width: 991.98px) {
+    .sidebar {
+      position: fixed;
+      left: -240px; } }
+  .sidebar-fixed .sidebar {
+    position: fixed; }
+  .sidebar-open .sidebar {
+    left: 0; }
+  .sidebar .sidebar-container {
+    position: absolute;
+    top: 0;
+    bottom: 51px;
+    width: 100%;
+    left: 0;
+    overflow-y: auto;
+    overflow-x: hidden; }
+    .sidebar .sidebar-container::-webkit-scrollbar-track {
+      background-color: #eeeeee; }
+  .sidebar .label {
+    font-size: .75em;
+    display: inline-block;
+    border-radius: .2em;
+    padding: 2px 5px;
+    background-color: #ccc;
+    color: #000;
+    margin: 0 3px; }
+  .sidebar .label-screenful {
+    color: #fff;
+    background-color: #6769d4; }
+  .sidebar .sidebar-menu {
+    font-size: 14px;
+    list-style: none;
+    margin: 0;
+    padding: 0; }
+    .sidebar .sidebar-menu li a:focus,
+    .open .sidebar .sidebar-menu li a:focus {
+      background-color: inherit; }
+    .sidebar .sidebar-menu ul {
+      padding: 0;
+      height: 0px;
+      overflow: hidden; }
+      .loaded .sidebar .sidebar-menu ul {
+        height: auto; }
+    .sidebar .sidebar-menu li.active ul {
+      height: auto; }
+    .sidebar .sidebar-menu li a {
+      color: rgba(255, 255, 255, 0.5);
+      text-decoration: none;
+      display: block; }
+    .sidebar .sidebar-menu li a:hover,
+    .sidebar .sidebar-menu li.open > a,
+    .sidebar .sidebar-menu li.open a:hover {
+      color: #ffffff;
+      background-color: #f0f0f0; }
+    .sidebar .sidebar-menu .arrow {
+      float: right;
+      font-size: 18px;
+      line-height: initial;
+      transition: all 0.3s ease;
+      margin-right: 0; }
+      .sidebar .sidebar-menu .arrow:before {
+        content: "\f105" !important; }
+    .sidebar .sidebar-menu li.open > a .arrow {
+      transform: rotate(90deg); }
+    .sidebar .sidebar-menu > li > a {
+      padding-top: 15px;
+      padding-bottom: 15px;
+      padding-left: 20px;
+      padding-right: 15px; }
+    .sidebar .sidebar-menu > li.active > a,
+    .sidebar .sidebar-menu > li.active > a:hover {
+      background-color: #85CE36 !important;
+      color: #ffffff !important; }
+    .sidebar .sidebar-menu > li.open > a {
+      background-color: #f7f7f7; }
+    .sidebar .sidebar-menu > li > a i {
+      margin-right: 5px;
+      font-size: 16px; }
+      .sidebar .sidebar-menu > li > a i.arrow {
+        font-size: 20px; }
+    .sidebar .sidebar-menu > li > .sidebar-nav > li a {
+      padding-top: 10px;
+      padding-bottom: 10px;
+      padding-left: 50px;
+      padding-right: 15px;
+      background-color: #f7f7f7; }
+    .sidebar .sidebar-menu > li > .sidebar-nav > li.active a {
+      color: #ffffff; }
+    .sidebar .sidebar-menu > li > .sidebar-nav > li > .sidebar-nav > li a {
+      padding-left: 60px;
+      padding-right: 15px; }
+    .sidebar .sidebar-menu > li > .sidebar-nav > li > .sidebar-nav > li > .sidebar-nav > li a {
+      padding-left: 70px; }
+
+.sidebar-overlay {
+  position: absolute;
+  display: none;
+  left: 200vw;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  z-index: 5;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  z-index: 15; }
+  @media (max-width: 991.98px) {
+    .sidebar-overlay {
+      display: block; } }
+  @media (max-width: 767.98px) {
+    .sidebar-overlay {
+      background-color: rgba(0, 0, 0, 0.7); } }
+  @media (max-width: 991.98px) {
+    .sidebar-open .sidebar-overlay {
+      left: 0;
+      opacity: 1; } }
+
+.sidebar-mobile-menu-handle {
+  display: none;
+  position: absolute;
+  top: 50px;
+  background-color: transparent;
+  width: 30px;
+  bottom: 0;
+  z-index: 10; }
+  @media (max-width: 991.98px) {
+    .sidebar-mobile-menu-handle {
+      display: block; } }
+
+.sidebar-header .brand {
+  color: #6ba829;
+  text-align: left;
+  padding-left: 25px;
+  line-height: 70px;
+  font-size: 16px; }
+  @media (max-width: 767.98px) {
+    .sidebar-header .brand {
+      line-height: 50px;
+      font-size: 16px; } }
+
+/*****************************************
+*       Background-image: cover mixin
+******************************************/
+/*****************************************
+*       Media Query Mixins
+******************************************/
+/*************************************************************
+*						App Variables
+**************************************************************/
+/*************************************************************
+*					  Colors Definitions
+**************************************************************/
+/*************************************************************
+*					Common Element Variables
+**************************************************************/
+.header {
+  background-color: #d7dde4;
+  height: 70px;
+  position: absolute;
+  left: 240px;
+  right: 0;
+  transition: left 0.3s ease;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: space-between; }
+  @media (max-width: 991.98px) {
+    .header {
+      left: 0; } }
+  @media (max-width: 767.98px) {
+    .header {
+      left: 0;
+      height: 50px; } }
+  .header-fixed .header {
+    position: fixed; }
+  @media (max-width: 767.98px) {
+    .header .header-block {
+      padding: 5px; } }
+
+.header .header-block-collapse {
+  padding-right: 5px; }
+  @media (max-width: 767.98px) {
+    .header .header-block-collapse {
+      width: 155px; } }
+  .header .header-block-collapse .collapse-btn {
+    background: none;
+    border: none;
+    box-shadow: none;
+    color: #85CE36;
+    font-size: 24px;
+    line-height: 40px;
+    border-radius: 0;
+    outline: none;
+    padding: 0;
+    padding-left: 10px;
+    padding-right: 10px;
+    vertical-align: initial; }
+
+.header .header-block-nav {
+  margin-left: auto;
   white-space: nowrap;
-  /* Set the fixed height of the footer here */
-  height: 60px;
-  line-height: 60px; /* Vertically center the text there */
-}
+  padding-right: 15px; }
+  @media (max-width: 767.98px) {
+    .header .header-block-nav {
+      padding-right: 25px; } }
+  .header .header-block-nav::after {
+    display: block;
+    clear: both;
+    content: ""; }
+  .header .header-block-nav a {
+    text-decoration: none; }
+  .header .header-block-nav ul {
+    margin: 0;
+    padding: 0;
+    list-style: none; }
+  .header .header-block-nav > ul {
+    display: table; }
+  .header .header-block-nav > ul > li {
+    display: table-cell;
+    position: relative; }
+    .header .header-block-nav > ul > li:before {
+      display: block;
+      content: " ";
+      width: 1px;
+      height: 24px;
+      top: 50%;
+      margin-top: -12px;
+      background-color: #8b9cb1;
+      position: absolute;
+      left: 0; }
+    .header .header-block-nav > ul > li:first-child:before {
+      display: none; }
+  .header .header-block-nav > ul > li > a {
+    padding: 0 15px; }
+    .header .header-block-nav > ul > li > a:hover {
+      color: #85CE36; }
+  .header .header-block-nav .dropdown-menu {
+    margin-top: 15px; }
+
+.app {
+  position: relative;
+  width: 100%;
+  padding-left: 240px;
+  min-height: 100vh;
+  margin: 0 auto;
+  left: 0;
+  background-color: #f0f3f6;
+  box-shadow: 0 0 3px #ccc;
+  transition: left 0.3s ease, padding-left 0.3s ease;
+  overflow: hidden; }
+  .app .content {
+    padding: 95px 20px 75px 20px;
+    min-height: 100vh; }
+    @media (min-width: 1200px) {
+      .app .content {
+        padding: 105px 40px 85px 40px; } }
+    @media (min-width: 992px) and (max-width: 1199.98px) {
+      .app .content {
+        padding: 100px 35px 80px 35px; } }
+    @media (min-width: 768px) and (max-width: 991.98px) {
+      .app .content {
+        padding: 95px 20px 75px 20px; } }
+    @media (max-width: 767.98px) {
+      .app .content {
+        padding: 70px 20px 70px 20px; } }
+  @media (max-width: 991.98px) {
+    .app {
+      padding-left: 0; } }
+  @media (max-width: 991.98px) {
+    .app.sidebar-open {
+      left: 0; } }
+  .app.blank {
+    background-color: #667380; }

@@ -10,56 +10,75 @@
         <link href="~/lib/bootstrap-vue/dist/bootstrap-vue.min.css" rel="stylesheet" />
     </environment>
     <environment exclude="Development">
-        <link href="~/lib/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" />
-        <link href="~/lib/bootstrap-vue/dist/bootstrap-vue.min.css" rel="stylesheet" />
+        <<link type="text/css" rel="stylesheet" href="//unpkg.com/bootstrap/dist/css/bootstrap.min.css" />
+        <link type="text/css" rel="stylesheet" href="//unpkg.com/bootstrap-vue@latest/dist/bootstrap-vue.css" />
     </environment>
     <link rel="stylesheet" href="~/css/app.css" />
 </head>
 <body>
-    <header>
-        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
-            <div class="container">
-                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">Template</a>
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
-                        aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
+    <div class="app header-fixed sidebar-fixed">
+        <header class="header">
+            <div class="header-block header-block-collapse d-lg-none d-xl-none">
+                <button class="collapse-btn" id="sidebar-collapse-btn">
+                    <i class="fa fa-bars"></i>
                 </button>
-                <div class="navbar-collapse collapse d-sm-i nline-flex flex-sm-row-reverse">
-                    <partial name="_LoginPartial" />
-                    <ul class="navbar-nav flex-grow-1">
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy">X-Privacy</a>
-                        </li>
-                    </ul>
+            </div>
+            <div class="header-block header-block-nav">
+                <partial name="_LoginPartial" />
+            </div>
+        </header>
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <div class="brand">
+                    <a asp-area="" asp-controller="Home" asp-action="Index">
+                        <div class="logo">
+                            <span class="l l1"></span>
+                            <span class="l l2"></span>
+                            <span class="l l3"></span>
+                            <span class="l l4"></span>
+                            <span class="l l5"></span>
+                        </div> Modular Admin
+                    </a>
                 </div>
             </div>
-        </nav>
-    </header>
-    <div class="container">
-        <partial name="_CookieConsentPartial" />
-        <main role="main" class="pb-3">
-            @RenderBody()
-        </main>
+            <nav class="menu">
+                <ul class="sidebar-menu metismenu" id="sidebar-menu">
+                    <li class="active">
+                        <a href="index.html">
+                            <i class="fa fa-home"></i> Dashboard
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy">X-Privacy</a>
+                    </li>
+                </ul>
+            </nav>
+        </aside>
+        <article class="content dashboard-page">
+            <partial name="_CookieConsentPartial" />
+            <section role="main" class="pb-3">
+                @RenderBody()
+            </section>
+        </article>
+
+        <footer class="border-top footer text-muted">
+            <div class="container">
+                &copy; 2018 - Template - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+            </div>
+        </footer>
     </div>
-
-    <footer class="border-top footer text-muted">
-        <div class="container">
-            &copy; 2018 - Template - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
-        </div>
-    </footer>
-
     <environment include="Development">
         <script src="~/lib/vue/dist/vue.js"></script>
         <script src="~/lib/babel-polyfill/dist/polyfill.min.js"></script>
         <script src="~/lib/bootstrap-vue/dist/bootstrap-vue.min.js"></script>
     </environment>
     <environment exclude="Development">
-        <script src="~/lib/vue/dist/vue.runtime.min.js"></script>
-        <script src="~/lib/babel-polyfill/dist/polyfill.min.js"></script>
-        <script src="~/lib/bootstrap-vue/dist/bootstrap-vue.min.js"></script>
+        <script src="//cdn.jsdelivr.net/npm/vue@2.5.21/dist/vue.min.js"></script>
+        <script src="//unpkg.com/babel-polyfill@latest/dist/polyfill.mins.js"></script>
+        <script src="//unpkg.com/bootstrap-vue@latest/dist/bootstrap-vue.min.js"></script>
     </environment>
     <script src="~/js/app.js" asp-append-version="true"></script>
 
