@@ -27,8 +27,8 @@ $color-primary-lighter: lighten($color-primary-light, 6%) !default;
 $color-primary-dark: darken($color-primary, 10%) !default;
 $color-primary-darker: darken($color-primary-dark, 6%) !default;
 
-$color-divider: #d7dde4 !default;
-$color-bg: #f0f3f6 !default;
+$color-divider: #fff !default;
+$color-bg: #fff !default;
 
 $color-inverse: #131e26 !default;
 $color-text-inverse: #ffffff !default;
@@ -42,15 +42,15 @@ $link-color: #969696 !default;
 $link-transition: initial;
 $link-decoration: underline;
 
-$link-hover-color: darken($color-primary, 8%) !default;
+$link-hover-color: #fff !default;
 $link-hover-decoration: underline !default;
 
 // Header
-$header-height: 70px !default;
+$header-height: 50px !default;
 $header-height-xs: 50px !default;
 
 // Sidebar
-$sidebar-width: 240px !default;
+$sidebar-width: 200px !default;
 
 // Footer
 $footer-height: 50px !default;
@@ -59,7 +59,7 @@ $sidebar-color-primary: #ffffff !default;
 $sidebar-color-secondary: darken($sidebar-color-primary, 6%) !default;
 
 $sidebar-color-text: fade-out($color-text-inverse, 0.5) !default;
-$sidebar-color-text-active: $color-text-inverse;
+$sidebar-color-text-active: #fff;
 
 
 

@@ -13,7 +13,6 @@
     transition: left 0.3s ease;
     z-index: 20;
 
-
     @include media-down(md) {
         position: fixed;
         left: -$sidebar-width;
@@ -57,9 +56,10 @@
     }
 
     .sidebar-menu {
+        top: 15px;
         font-size: 14px;
         list-style: none;
-        margin: 0;
+        margin: 15px 0 0 0;
         padding: 0;
         // Common styles
         li {
@@ -96,7 +96,6 @@
         li.open > a,
         li.open a:hover {
             color: $sidebar-color-text-active;
-            background-color: $sidebar-color-secondary;
         }
 
         .arrow {
@@ -120,16 +119,16 @@
         & > li {
             // First level items links
             & > a {
-                padding-top: 15px;
-                padding-bottom: 15px;
+                padding-top: 7.5px;
+                padding-bottom: 7.5px;
                 padding-left: 20px;
                 padding-right: 15px;
+                font-family: Helvetica,sans-serif;
             }
             // First level active links have primary background
             &.active > a,
             &.active > a:hover {
-                background-color: $color-primary !important;
-                color: $color-text-inverse !important;
+                color: $sidebar-color-text-active;
             }
             // First level active links have bit darker background
             &.open > a {
@@ -226,16 +225,29 @@
 
 
 .sidebar-header {
+    box-shadow: -3px 5px 10px 0px #111;
+
     .brand {
         color: $color-primary-dark;
         text-align: left;
         padding-left: 25px;
+        padding-right: 25px;
+        text-align: center;
         line-height: $header-height;
-        font-size: 16px;
+        font-size: 24px;
 
         @include media-down(sm) {
             line-height: $header-height-xs;
             font-size: 16px;
         }
     }
+    /*:after {
+        content: '';
+        position: absolute;
+        top: $header-height;
+        right: 25px;
+        height: 1px;
+        width: calc(100% - 50px);
+        background-color: rgba(180, 180, 180, 0.3);
+    }*/
 }

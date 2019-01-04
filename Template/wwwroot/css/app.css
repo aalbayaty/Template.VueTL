@@ -36,7 +36,7 @@
 ******************************************/
 .sidebar {
   background-color: #ffffff;
-  width: 240px;
+  width: 200px;
   padding-bottom: 60px;
   position: absolute;
   top: 0;
@@ -47,7 +47,7 @@
   @media (max-width: 991.98px) {
     .sidebar {
       position: fixed;
-      left: -240px; } }
+      left: -200px; } }
   .sidebar-fixed .sidebar {
     position: fixed; }
   .sidebar-open .sidebar {
@@ -74,9 +74,10 @@
     color: #fff;
     background-color: #6769d4; }
   .sidebar .sidebar-menu {
+    top: 15px;
     font-size: 14px;
     list-style: none;
-    margin: 0;
+    margin: 15px 0 0 0;
     padding: 0; }
     .sidebar .sidebar-menu li a:focus,
     .open .sidebar .sidebar-menu li a:focus {
@@ -96,8 +97,7 @@
     .sidebar .sidebar-menu li a:hover,
     .sidebar .sidebar-menu li.open > a,
     .sidebar .sidebar-menu li.open a:hover {
-      color: #ffffff;
-      background-color: #f0f0f0; }
+      color: #fff; }
     .sidebar .sidebar-menu .arrow {
       float: right;
       font-size: 18px;
@@ -109,14 +109,14 @@
     .sidebar .sidebar-menu li.open > a .arrow {
       transform: rotate(90deg); }
     .sidebar .sidebar-menu > li > a {
-      padding-top: 15px;
-      padding-bottom: 15px;
+      padding-top: 7.5px;
+      padding-bottom: 7.5px;
       padding-left: 20px;
-      padding-right: 15px; }
+      padding-right: 15px;
+      font-family: Helvetica,sans-serif; }
     .sidebar .sidebar-menu > li.active > a,
     .sidebar .sidebar-menu > li.active > a:hover {
-      background-color: #85CE36 !important;
-      color: #ffffff !important; }
+      color: #fff; }
     .sidebar .sidebar-menu > li.open > a {
       background-color: #f7f7f7; }
     .sidebar .sidebar-menu > li > a i {
@@ -131,7 +131,7 @@
       padding-right: 15px;
       background-color: #f7f7f7; }
     .sidebar .sidebar-menu > li > .sidebar-nav > li.active a {
-      color: #ffffff; }
+      color: #fff; }
     .sidebar .sidebar-menu > li > .sidebar-nav > li > .sidebar-nav > li a {
       padding-left: 60px;
       padding-right: 15px; }
@@ -172,16 +172,29 @@
     .sidebar-mobile-menu-handle {
       display: block; } }
 
-.sidebar-header .brand {
-  color: #6ba829;
-  text-align: left;
-  padding-left: 25px;
-  line-height: 70px;
-  font-size: 16px; }
-  @media (max-width: 767.98px) {
-    .sidebar-header .brand {
-      line-height: 50px;
-      font-size: 16px; } }
+.sidebar-header {
+  box-shadow: -3px 5px 10px 0px #111;
+  /*:after {
+        content: '';
+        position: absolute;
+        top: $header-height;
+        right: 25px;
+        height: 1px;
+        width: calc(100% - 50px);
+        background-color: rgba(180, 180, 180, 0.3);
+    }*/ }
+  .sidebar-header .brand {
+    color: #6ba829;
+    text-align: left;
+    padding-left: 25px;
+    padding-right: 25px;
+    text-align: center;
+    line-height: 50px;
+    font-size: 24px; }
+    @media (max-width: 767.98px) {
+      .sidebar-header .brand {
+        line-height: 50px;
+        font-size: 16px; } }
 
 /*****************************************
 *       Background-image: cover mixin
@@ -199,16 +212,17 @@
 *					Common Element Variables
 **************************************************************/
 .header {
-  background-color: #d7dde4;
-  height: 70px;
+  background-color: #fff;
+  height: 50px;
   position: absolute;
-  left: 240px;
+  left: 200px;
   right: 0;
   transition: left 0.3s ease;
   z-index: 10;
   display: flex;
   align-items: center;
-  justify-content: space-between; }
+  justify-content: space-between;
+  box-shadow: 0px 5px 10px 0px #d6d6d6; }
   @media (max-width: 991.98px) {
     .header {
       left: 0; } }
@@ -270,7 +284,7 @@
       height: 24px;
       top: 50%;
       margin-top: -12px;
-      background-color: #8b9cb1;
+      background-color: #bfbfbf;
       position: absolute;
       left: 0; }
     .header .header-block-nav > ul > li:first-child:before {
@@ -285,26 +299,31 @@
 .app {
   position: relative;
   width: 100%;
-  padding-left: 240px;
+  padding-left: 200px;
   min-height: 100vh;
   margin: 0 auto;
   left: 0;
-  background-color: #f0f3f6;
+  background-color: #fff;
   box-shadow: 0 0 3px #ccc;
   transition: left 0.3s ease, padding-left 0.3s ease;
   overflow: hidden; }
+  .app .dashboard-page {
+    background: #f5f5f5;
+    box-shadow: inset 5px 0px 10px 0px #d6d6d6; }
+    .app .dashboard-page main {
+      background: #fff; }
   .app .content {
-    padding: 95px 20px 75px 20px;
+    padding: 75px 20px 75px 20px;
     min-height: 100vh; }
     @media (min-width: 1200px) {
       .app .content {
-        padding: 105px 40px 85px 40px; } }
+        padding: 85px 40px 85px 40px; } }
     @media (min-width: 992px) and (max-width: 1199.98px) {
       .app .content {
-        padding: 100px 35px 80px 35px; } }
+        padding: 80px 35px 80px 35px; } }
     @media (min-width: 768px) and (max-width: 991.98px) {
       .app .content {
-        padding: 95px 20px 75px 20px; } }
+        padding: 75px 20px 75px 20px; } }
     @media (max-width: 767.98px) {
       .app .content {
         padding: 70px 20px 70px 20px; } }
