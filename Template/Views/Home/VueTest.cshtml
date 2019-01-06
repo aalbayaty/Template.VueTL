@@ -1,0 +1,20 @@
+﻿@{
+    ViewData["Title"] = "VueTest";
+}
+
+<h1>VueTest</h1>
+
+<div id="app-test">
+    {{ message }}
+</div>
+
+@section Scripts {
+    <script type="text/javascript" defer>
+        var app = new Vue({
+            el: '#app-test',
+            data: {
+                message: 'Hello Vue!' + Math.random()
+            }
+        });
+    </script>
+}

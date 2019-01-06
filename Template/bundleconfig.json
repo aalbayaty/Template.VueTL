@@ -1,0 +1,41 @@
+﻿[
+  {
+    "outputFileName": "wwwroot/js/app.min.js",
+    "inputFiles": [
+      "wwwroot/js/app.js"
+    ],
+    "minify": {
+      "enabled": true,
+      "renameLocals": true
+    },
+    "sourceMap": false
+  },
+  {
+    "outputFileName": "wwwroot/js/dist.min.dev.js",
+    "inputFiles": [
+      "wwwroot/lib/vue/dist/vue.js",
+      "wwwroot/babel-polyfill/polyfill.min.js",
+      "wwwroot/bootstrap-vue/dist/bootstrap-vue.min.js",
+      "wwwroot/turbolinks/turbolinks.js"
+    ],
+    "minify": {
+      "enabled": true,
+      "renameLocals": true
+    },
+    "sourceMap": false
+  },
+  {
+    "outputFileName": "wwwroot/js/dist.min.js",
+    "inputFiles": [
+      "wwwroot/lib/vue/dist/vue.min.js",
+      "wwwroot/babel-polyfill/polyfill.min.js",
+      "wwwroot/bootstrap-vue/dist/bootstrap-vue.min.js",
+      "wwwroot/turbolinks/turbolinks.js"
+    ],
+    "minify": {
+      "enabled": true,
+      "renameLocals": true
+    },
+    "sourceMap": false
+  }
+]

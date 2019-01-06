@@ -7,7 +7,7 @@
       "destination": "wwwroot/lib/vue/"
     },
     {
-      "library": "bootstrap-vue@2.0.0-rc.9",
+      "library": "bootstrap-vue@2.0.0-rc.11",
       "destination": "wwwroot/lib/bootstrap-vue/"
     },
     {
@@ -15,9 +15,15 @@
       "destination": "wwwroot/lib/bootstrap/"
     },
     {
-      "library": "babel-polyfill@7.0.0-beta.3",
+      "provider": "cdnjs",
+      "library": "babel-polyfill@7.2.5",
       "destination": "wwwroot/lib/babel-polyfill"
 
+    },
+    {
+      "provider": "cdnjs",
+      "destination": "wwwroot/lib/turbolinks/",
+      "library": "turbolinks@5.2.0"
     }
   ]
 }
