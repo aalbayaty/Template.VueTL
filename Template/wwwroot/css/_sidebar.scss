@@ -200,7 +200,6 @@
         background-color: fade-out(#000, 0.3);
     }
 
-
     .sidebar-open & {
         @include media-down(md) {
             left: 0;
@@ -222,7 +221,6 @@
         display: block;
     }
 }
-
 
 .sidebar-header {
     box-shadow: -3px 5px 10px 0px #111;

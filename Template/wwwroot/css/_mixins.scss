@@ -40,7 +40,6 @@
 //     border-left: $height solid $color;
 // }
 
-
 /*****************************************
 *       Background-image: cover mixin
 ******************************************/
@@ -75,7 +74,6 @@
         @warn "First breakpoint in `$grid-breakpoints` must start at 0, but starts at #{$first-value}.";
     }
 }
-
 
 @mixin bg-cover() {
     background-size: cover;
@@ -128,7 +126,6 @@
         @content;
     }
 }
-
 
 // /******************************************
 // *           Hardware Acceleration

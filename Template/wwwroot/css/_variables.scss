@@ -3,23 +3,13 @@
 *						App Variables
 **************************************************************/
 
-
 /*************************************************************
 *					  Colors Definitions
 **************************************************************/
 
 $grid-breakpoints: () !default;
 // stylelint-disable-next-line scss/dollar-variable-default
-$grid-breakpoints: map-merge(
-  (
-    xs: 0,
-    sm: 576px,
-    md: 768px,
-    lg: 992px,
-    xl: 1200px
-  ),
-  $grid-breakpoints
-);
+$grid-breakpoints: map-merge( ( xs: 0, sm: 576px, md: 768px, lg: 992px, xl: 1200px ), $grid-breakpoints );
 
 $color-primary: #85CE36 !default;
 $color-primary-light: lighten($color-primary, 10%) !default;
@@ -60,8 +50,6 @@ $sidebar-color-secondary: darken($sidebar-color-primary, 6%) !default;
 
 $sidebar-color-text: fade-out($color-text-inverse, 0.5) !default;
 $sidebar-color-text-active: #fff;
-
-
 
 // Content
 $content-padding-x-xl: 40px !default;

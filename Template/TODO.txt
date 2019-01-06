@@ -1,0 +1,5 @@
+﻿1. Update Profile Area to Match new theme.
+2. Update Profile Navigation to be responsive.
+3. Change Login Page to Only login.
+4. Remove jQuery from Profile Page.
+5. Add Display Name.
