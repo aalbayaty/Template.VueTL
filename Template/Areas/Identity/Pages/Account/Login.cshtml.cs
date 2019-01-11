@@ -38,10 +38,12 @@ namespace Template.Areas.Identity.Pages.Account
         {
             [Required]
             [EmailAddress]
+            [Display(Prompt = "Please enter your email")]
             public string Email { get; set; }
 
             [Required]
             [DataType(DataType.Password)]
+            [Display(Prompt ="Please enter your password")]
             public string Password { get; set; }
 
             [Display(Name = "Remember me?")]

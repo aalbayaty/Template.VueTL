@@ -7,12 +7,18 @@
 
 
 //Mobile Button. No Jquery required!
-var overlayClicked = document.getElementById('sidebar-overlay'); // or whatever triggers the toggle
+document.addEventListener("DOMContentLoaded", function (event) {
+    var overlayClicked = document.getElementById('sidebar-overlay'); // or whatever triggers the toggle
 
-overlayClicked.addEventListener('click', function (e) {
-    e.preventDefault();
-    closeSidebar();
+    if (overlayClicked) {
+        overlayClicked.addEventListener('click', function (e) {
+            e.preventDefault();
+            closeSidebar();
+        });
+    }
 });
+
+
 
 function openSidebar() {
     document.getElementById("app").classList.add("sidebar-open");

@@ -30,6 +30,7 @@ namespace Template.Areas.Identity.Pages.Account
         {
             [Required]
             [EmailAddress]
+            [Display(Prompt = "Please enter your email")]
             public string Email { get; set; }
         }
 

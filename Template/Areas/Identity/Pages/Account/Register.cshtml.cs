@@ -9,6 +9,8 @@ using Microsoft.AspNetCore.Identity.UI.Services;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.Extensions.Logging;
+using Microsoft.Extensions.Options;
+using Template.Models;
 
 namespace Template.Areas.Identity.Pages.Account
 {
@@ -19,13 +21,16 @@ namespace Template.Areas.Identity.Pages.Account
         private readonly UserManager<IdentityUser> _userManager;
         private readonly ILogger<RegisterModel> _logger;
         private readonly IEmailSender _emailSender;
+        private readonly bool _enableRegistration;
 
         public RegisterModel(
             UserManager<IdentityUser> userManager,
             SignInManager<IdentityUser> signInManager,
             ILogger<RegisterModel> logger,
-            IEmailSender emailSender)
+            IEmailSender emailSender, 
+            IOptions<SiteSettings> SiteSettings)
         {
+            _enableRegistration = SiteSettings.Value.AllowRegistration;
             _userManager = userManager;
             _signInManager = signInManager;
             _logger = logger;
@@ -63,6 +68,9 @@ namespace Template.Areas.Identity.Pages.Account
 
         public async Task<IActionResult> OnPostAsync(string returnUrl = null)
         {
+            if (_enableRegistration == false)
+                return NotFound();
+
             returnUrl = returnUrl ?? Url.Content("~/");
             if (ModelState.IsValid)
             {

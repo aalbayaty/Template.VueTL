@@ -1,0 +1,31 @@
+﻿@inject Microsoft.Extensions.Options.IOptions<Template.Models.SiteSettings> SiteSettings
+@{
+    @if (SiteSettings.Value.NavigationRequiresLogin)
+    {
+        Layout = "/Views/Shared/_LayoutNoNavigation.cshtml";
+    }
+    else
+    {
+        Layout = "/Views/Shared/_Layout.cshtml";
+    }
+}
+
+<div class="auth-container">
+    <div class="card">
+        @if (SiteSettings.Value.NavigationRequiresLogin)
+        {
+            <header class="auth-header">
+                <h1 class="auth-title">
+                    <partial name="_Logo" />
+                </h1>
+            </header>
+        }
+        <div class="auth-content">
+            @RenderBody()
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    @RenderSection("Scripts", required: false)
+}
