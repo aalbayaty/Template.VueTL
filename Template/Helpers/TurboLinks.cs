@@ -4,6 +4,9 @@ using System;
 using System.IO;
 using System.Threading.Tasks;
 
+
+//Based on TurboLinks.Net:
+//  https://github.com/TerribleDev/TurboLinks.Net
 namespace TurboLinks.Net
 {
     public class TurboLinks
@@ -18,15 +21,19 @@ namespace TurboLinks.Net
         public async Task Invoke(HttpContext context)
         {
             //Adding Turbolinks header to fix redirect issues in Turbolinks.
-            context.Response.OnStarting(state => {
-                var httpContext = (HttpContext)state;
-                if (httpContext.Response.Headers.ContainsKey("Turbolinks-Location") == false)
+            if ((context.Response.StatusCode == 302) || (context.Response.StatusCode == 301))
+            {
+                context.Response.OnStarting(state =>
                 {
-                    httpContext.Response.Headers.Add("Turbolinks-Location", new[] { httpContext.Response.Headers["Location"].ToString() });
-                }
-                return Task.FromResult(0);
-            }, context);
+                    var httpContext = (HttpContext)state;
+                    if (httpContext.Response.Headers.ContainsKey("Turbolinks-Location") == false)
+                    {
+                        httpContext.Response.Headers.Add("Turbolinks-Location", new[] { httpContext.Response.Headers["Location"].ToString() });
+                    }
+                    return Task.FromResult(0);
+                }, context);
 
+            }
             await _next(context);
 
         }
