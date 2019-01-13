@@ -9,8 +9,9 @@ namespace Template.Models
     //Not sure where to put this class, So I just added it to Models directory. 
     public class SiteSettings
     {
-        public bool AllowRegistration { get; set; }
-        public bool NavigationRequiresLogin { get; set; }
+        public bool RegistrationEnabled { get; set; }
+        public bool NavigationLoginEnabled { get; set; } //Show navigation if a user is not logged in.
+        public bool TwoFactorAuthenticationEnabled { get; set; }
         public AdminsSettings Admin { get; set; }
     }
 

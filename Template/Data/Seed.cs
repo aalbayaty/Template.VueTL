@@ -26,6 +26,7 @@ namespace Template.Data
                 return;
             var username = Configuration.GetSection("SiteSettings:Admin")["Username"];
             var password = Configuration.GetSection("SiteSettings:Admin")["Password"];
+            var email = Configuration.GetSection("SiteSettings:Admin")["Email"];
 
             //Add more roles if needed here.
             string[] roleNames = { "Admin", "Member" };
@@ -46,11 +47,11 @@ namespace Template.Data
             var poweruser = new IdentityUser
             {
                 UserName = username,
-                Email =username
+                Email = email,
             };
             
 
-            var user = await UserManager.FindByEmailAsync(username);
+            var user = await UserManager.FindByIdAsync(username);
             if (user == null)
             {
                 var createPowerUser = await UserManager.CreateAsync(poweruser, password);

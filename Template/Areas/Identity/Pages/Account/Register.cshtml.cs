@@ -30,7 +30,7 @@ namespace Template.Areas.Identity.Pages.Account
             IEmailSender emailSender, 
             IOptions<SiteSettings> SiteSettings)
         {
-            _enableRegistration = SiteSettings.Value.AllowRegistration;
+            _enableRegistration = SiteSettings.Value.RegistrationEnabled;
             _userManager = userManager;
             _signInManager = signInManager;
             _logger = logger;
@@ -44,6 +44,10 @@ namespace Template.Areas.Identity.Pages.Account
 
         public class InputModel
         {
+            [Required]
+            [Display(Name = "Username")]
+            public string Username { get; set; }
+
             [Required]
             [EmailAddress]
             [Display(Name = "Email")]
@@ -74,7 +78,7 @@ namespace Template.Areas.Identity.Pages.Account
             returnUrl = returnUrl ?? Url.Content("~/");
             if (ModelState.IsValid)
             {
-                var user = new IdentityUser { UserName = Input.Email, Email = Input.Email };
+                var user = new IdentityUser { UserName = Input.Username, Email = Input.Email };
                 var result = await _userManager.CreateAsync(user, Input.Password);
                 if (result.Succeeded)
                 {

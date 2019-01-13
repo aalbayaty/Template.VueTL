@@ -16,6 +16,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
             closeSidebar();
         });
     }
+
 });
 
 
@@ -28,3 +29,5 @@ function openSidebar() {
 function closeSidebar() {
     document.getElementById("app").classList.remove("sidebar-open");
 }
+
+

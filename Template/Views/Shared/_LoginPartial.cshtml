@@ -4,21 +4,39 @@
 @using Template.Models
 @inject Microsoft.Extensions.Options.IOptions<SiteSettings> SiteSettings
 
-<ul class="nav-profile">
-    @if (SignInManager.IsSignedIn(User))
-    {
-        <li class="nav-item">
-            <a class="nav-link text-dark" asp-area="Identity" asp-page="/Account/Manage/Index" title="Manage">Hello @User.Identity.Name!</a>
-        </li>
-        <li class="nav-item">
-            <form class="form-inline" asp-area="Identity" asp-page="/Account/Logout" asp-route-returnUrl="@Url.Action("Index", "Home", new { area = "" })">
-                <button type="submit" class="nav-link btn btn-link text-dark">Logout</button>
-            </form>
-        </li>
-    }
-    else
-    {
-        @if (SiteSettings.Value.AllowRegistration)
+@if (SignInManager.IsSignedIn(User))
+{
+    <div id="user-nav">
+        <b-nav class="nav-profile">
+            <b-nav-item-dropdown right>
+                <!-- Using button-content slot -->
+                <template slot="button-content">
+                    @User.Identity.Name
+                </template>
+                <b-dropdown-item href="@Url.Page("/Account/Manage/Index", new { Area = "Identity" })">Profile</b-dropdown-item>
+                <b-dropdown-item v-on:click="Logout">
+                    Logout
+                    <form id="LogoutForm" name="LogoutForm" class="form-inline" asp-area="Identity" asp-page="/Account/Logout" asp-route-returnUrl="@Url.Action(" Index", "Home" , new { area="" })"></form>
+                </b-dropdown-item>
+            </b-nav-item-dropdown>
+        </b-nav>
+    </div>
+    <!-- Can't use @@Section in partials. I'll think of moving this elsewhere later. Ideas would be nice. -->
+    <script type="text/javascript">
+        var userNav = new Vue({
+            el: '#user-nav',
+            methods: {
+                Logout: function () {
+                    document.getElementById("LogoutForm").submit();
+                }
+            }
+        });
+    </script>
+}
+else
+{
+    <ul class="nav-profile">
+        @if (SiteSettings.Value.RegistrationEnabled)
         {
             <li class="nav-item">
                 <a class="nav-link text-dark" asp-area="Identity" asp-page="/Account/Register">Register</a>
@@ -27,5 +45,6 @@
         <li class="nav-item">
             <a class="nav-link text-dark" asp-area="Identity" asp-page="/Account/Login">Login</a>
         </li>
-    }
-</ul>
+
+    </ul>
+}

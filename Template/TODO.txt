@@ -1,9 +1,14 @@
-﻿X 1. Update Profile Area to Match new theme.
-  2. Update Profile Navigation to be responsive.
-  3. Change Login Page to Only login.
-  4. Remove jQuery from Profile Page (Change Validation to Vue).
-  5. Add Display Name.
-  6. Add Admin User/Section.
-  7. Add Admin Seed.
-X 8. Add Registartion Settings to prevent users from registering.
-  9. Add Login Page only Setting.
+﻿TODO v1:
+
+X 1. Update Profile Area to Match new theme.
+X 2. Update Profile Navigation to be responsive.
+X 3. Change Login Page to Only login.
+X 4. Add Display Name/Username.
+X 5. Add Admin Seed.
+X 6. Add Registartion Settings to prevent users from registering.
+X 7. Add Login Page only Setting.
+
+TODO v2:
+1. Replace Jquery Validation (Change Validation to Vue).
+2. Add Admin User/Section.
+3. Make prettier(?) [Channge fonts, headers, colors, ...etc]

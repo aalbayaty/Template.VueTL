@@ -13,13 +13,13 @@
   {
     "outputFileName": "wwwroot/js/dist.min.dev.js",
     "inputFiles": [
+      "wwwroot/lib/babel-polyfill/polyfill.min.js",
       "wwwroot/lib/vue/dist/vue.js",
-      "wwwroot/babel-polyfill/polyfill.min.js",
-      "wwwroot/bootstrap-vue/dist/bootstrap-vue.min.js",
-      "wwwroot/turbolinks/turbolinks.js"
+      "wwwroot/lib/bootstrap-vue/dist/bootstrap-vue.min.js",
+      "wwwroot/lib/turbolinks/turbolinks.js"
     ],
     "minify": {
-      "enabled": true,
+      "enabled": false,
       "renameLocals": true
     },
     "sourceMap": false
@@ -27,10 +27,10 @@
   {
     "outputFileName": "wwwroot/js/dist.min.js",
     "inputFiles": [
+      "wwwroot/lib/babel-polyfill/polyfill.min.js",
       "wwwroot/lib/vue/dist/vue.min.js",
-      "wwwroot/babel-polyfill/polyfill.min.js",
-      "wwwroot/bootstrap-vue/dist/bootstrap-vue.min.js",
-      "wwwroot/turbolinks/turbolinks.js"
+      "wwwroot/lib/bootstrap-vue/dist/bootstrap-vue.min.js",
+      "wwwroot/lib/turbolinks/turbolinks.js"
     ],
     "minify": {
       "enabled": true,

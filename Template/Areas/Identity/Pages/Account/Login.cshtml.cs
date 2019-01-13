@@ -9,6 +9,7 @@ using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.Extensions.Logging;
+using Microsoft.AspNetCore.Http.Extensions;
 
 namespace Template.Areas.Identity.Pages.Account
 {
@@ -37,9 +38,8 @@ namespace Template.Areas.Identity.Pages.Account
         public class InputModel
         {
             [Required]
-            [EmailAddress]
-            [Display(Prompt = "Please enter your email")]
-            public string Email { get; set; }
+            [Display(Prompt = "Please enter your username")]
+            public string Username { get; set; }
 
             [Required]
             [DataType(DataType.Password)]
@@ -52,6 +52,7 @@ namespace Template.Areas.Identity.Pages.Account
 
         public async Task OnGetAsync(string returnUrl = null)
         {
+            Request.HttpContext.Response.Headers.Add("Turbolinks-Location", Request?.GetDisplayUrl());
             if (!string.IsNullOrEmpty(ErrorMessage))
             {
                 ModelState.AddModelError(string.Empty, ErrorMessage);
@@ -75,7 +76,7 @@ namespace Template.Areas.Identity.Pages.Account
             {
                 // This doesn't count login failures towards account lockout
                 // To enable password failures to trigger account lockout, set lockoutOnFailure: true
-                var result = await _signInManager.PasswordSignInAsync(Input.Email, Input.Password, Input.RememberMe, lockoutOnFailure: true);
+                var result = await _signInManager.PasswordSignInAsync(Input.Username, Input.Password, Input.RememberMe, lockoutOnFailure: true);
                 if (result.Succeeded)
                 {
                     _logger.LogInformation("User logged in.");

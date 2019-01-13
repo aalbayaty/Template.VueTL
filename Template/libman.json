@@ -26,6 +26,11 @@
       "provider": "cdnjs",
       "destination": "wwwroot/lib/turbolinks/",
       "library": "turbolinks@5.2.0"
+    },
+    {
+      "library": "qrcode@1.3.2",
+      "destination": "wwwroot/lib/qrcode",
+      "files": [ "build/qrcode.min.js", "build/qrcode.js" ]
     }
   ]
 }

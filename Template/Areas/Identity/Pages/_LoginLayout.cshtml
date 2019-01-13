@@ -1,6 +1,6 @@
 ﻿@inject Microsoft.Extensions.Options.IOptions<Template.Models.SiteSettings> SiteSettings
 @{
-    @if (SiteSettings.Value.NavigationRequiresLogin)
+    @if (SiteSettings.Value.NavigationLoginEnabled == false)
     {
         Layout = "/Views/Shared/_LayoutNoNavigation.cshtml";
     }
@@ -12,12 +12,12 @@
 
 <div class="auth-container">
     <div class="card">
-        @if (SiteSettings.Value.NavigationRequiresLogin)
+        @if (SiteSettings.Value.NavigationLoginEnabled == false)
         {
             <header class="auth-header">
-                <h1 class="auth-title">
+                <h3 class="text-dark">
                     <partial name="_Logo" />
-                </h1>
+                </h3>
             </header>
         }
         <div class="auth-content">
@@ -27,5 +27,5 @@
 </div>
 
 @section Scripts {
-    @RenderSection("Scripts", required: false)
+     @RenderSection("Scripts", required: false)
 }

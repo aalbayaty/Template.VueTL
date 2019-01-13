@@ -235,6 +235,9 @@
   @media (max-width: 767.98px) {
     .header .header-block {
       padding: 5px; } }
+  .header .header-block-nav:last-child {
+    padding-right: 0px;
+    padding-left: 50px; }
 
 .header .header-block-collapse {
   padding-right: 5px; }
