@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace Template.Settings
+namespace Template.Config
 {
 
     //Not sure where to put this class, So I just added it to Models directory. 

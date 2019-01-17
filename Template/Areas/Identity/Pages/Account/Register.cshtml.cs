@@ -10,7 +10,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
-using Template.Settings;
+using Template.Config;
 
 namespace Template.Areas.Identity.Pages.Account
 {
