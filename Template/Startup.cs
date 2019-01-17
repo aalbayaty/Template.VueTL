@@ -13,8 +13,8 @@ using Microsoft.EntityFrameworkCore;
 using Template.Data;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using Template.Helpers;
-using TurboLinks.Net;
+using Template.Settings;
+using Template.TurboLinks;
 
 namespace Template
 {

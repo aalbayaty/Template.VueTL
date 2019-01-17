@@ -25,6 +25,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Template.Data\Template.Data.csproj" />
+    <ProjectReference Include="..\Template.TurboLinks\Template.TurboLinks.csproj" />
   </ItemGroup>
 
 

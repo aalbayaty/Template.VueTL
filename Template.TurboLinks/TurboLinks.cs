@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 //Based on TurboLinks.Net:
 //  https://github.com/TerribleDev/TurboLinks.Net
-namespace TurboLinks.Net
+namespace Template.TurboLinks
 {
     public class TurboLinks
     {
