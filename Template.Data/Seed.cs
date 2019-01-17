@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Threading.Tasks;
-using Template.Models;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;

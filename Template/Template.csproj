@@ -19,8 +19,12 @@
 
 
   <ItemGroup>
-    <Folder Include="Helpers\" />
     <Folder Include="wwwroot\lib\" />
+  </ItemGroup>
+
+
+  <ItemGroup>
+    <ProjectReference Include="..\Template.Data\Template.Data.csproj" />
   </ItemGroup>
 
 
