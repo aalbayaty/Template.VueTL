@@ -25,8 +25,8 @@
 
 
   <ItemGroup>
-    <ProjectReference Include="..\Template.Data\Template.VueTL.Data.csproj" />
-    <ProjectReference Include="..\Template.TurboLinks\Template.VueTL.TurboLinks.csproj" />
+    <ProjectReference Include="..\Template.VueTL.Data\Template.VueTL.Data.csproj" />
+    <ProjectReference Include="..\Template.VueTL.TurboLinks\Template.VueTL.TurboLinks.csproj" />
   </ItemGroup>
 
 
