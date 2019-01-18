@@ -1,9 +1,9 @@
 ﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using System.Diagnostics;
-using Template.Models;
+using Template.VueTL.Models;
 
-namespace Template.Controllers
+namespace Template.VueTL.Controllers
 {
     [Authorize]
     public class HomeController : Controller

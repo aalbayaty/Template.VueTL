@@ -1,21 +1,18 @@
-﻿using System;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Identity;
+﻿using Microsoft.AspNetCore.Identity;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using System;
+using System.Threading.Tasks;
 
-namespace Template.Data
+namespace Template.VueTL.Data
 
 {
-
     public static class Seed
 
     {
-
         public static async Task CreateRoles(IServiceProvider serviceProvider, IConfiguration Configuration)
 
         {
-
             //adding customs roles
 
             var RoleManager = serviceProvider.GetRequiredService<RoleManager<IdentityRole>>();
@@ -48,7 +45,6 @@ namespace Template.Data
                 UserName = username,
                 Email = email,
             };
-            
 
             var user = await UserManager.FindByIdAsync(username);
             if (user == null)
@@ -56,19 +52,14 @@ namespace Template.Data
                 var createPowerUser = await UserManager.CreateAsync(poweruser, password);
                 if (createPowerUser.Succeeded)
                 {
-                    // here we assign the new user the "Admin" role 
+                    // here we assign the new user the "Admin" role
                     await UserManager.AddToRoleAsync(poweruser, "Admin");
-
                 }
             }
             else if (await UserManager.IsInRoleAsync(user, "Admin") == false)
             {
                 await UserManager.AddToRoleAsync(user, "Admin");
             }
-
-
         }
-
     }
-
 }

@@ -1,16 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore;
+﻿using Microsoft.AspNetCore;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
-using Template.Data;
+using System;
+using Template.VueTL.Data;
 
-namespace Template
+namespace Template.VueTL
 {
     public class Program
     {
@@ -26,7 +22,6 @@ namespace Template
                     var serviceProvider = services.GetRequiredService<IServiceProvider>();
                     var configuration = services.GetRequiredService<IConfiguration>();
                     Seed.CreateRoles(serviceProvider, configuration).Wait();
-
                 }
                 catch (Exception exception)
                 {
@@ -34,7 +29,6 @@ namespace Template
                     logger.LogError(exception, "An error occurred while creating roles");
                 }
             }
-
 
             host.Run();
         }

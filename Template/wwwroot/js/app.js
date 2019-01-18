@@ -3,9 +3,6 @@
 
 // Write your JavaScript code.
 
-
-
-
 //Mobile Button. No Jquery required!
 document.addEventListener("DOMContentLoaded", function (event) {
     var overlayClicked = document.getElementById('sidebar-overlay'); // or whatever triggers the toggle
@@ -16,18 +13,12 @@ document.addEventListener("DOMContentLoaded", function (event) {
             closeSidebar();
         });
     }
-
 });
-
-
 
 function openSidebar() {
     document.getElementById("app").classList.add("sidebar-open");
 }
 
-
 function closeSidebar() {
     document.getElementById("app").classList.remove("sidebar-open");
 }
-
-

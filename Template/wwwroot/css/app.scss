@@ -25,7 +25,6 @@
     }
 
     .content {
-
         $padding-x: $content-padding-x-md;
         $padding-y: $content-padding-y-md;
 
@@ -60,7 +59,6 @@
             padding: $header-height-xs + $padding-y $padding-x $footer-height + $padding-y $padding-x;
         }
     }
-
 
     @include media-down(md) {
         padding-left: 0;

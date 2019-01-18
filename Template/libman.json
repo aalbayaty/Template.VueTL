@@ -6,7 +6,6 @@
       "library": "vue@2.5.21",
       "destination": "wwwroot/lib/vue/",
       "files": ["dist/vue.min.js","dist/vue.js"]
-
     },
     {
       "library": "bootstrap-vue@2.0.0-rc.11",
@@ -20,7 +19,6 @@
       "provider": "cdnjs",
       "library": "babel-polyfill@7.2.5",
       "destination": "wwwroot/lib/babel-polyfill"
-
     },
     {
       "provider": "cdnjs",

@@ -1,12 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-
-namespace Template.Config
+﻿namespace Template.VueTL.Config
 {
-
-    //Not sure where to put this class, So I just added it to Models directory. 
+    //Not sure where to put this class, So I just added it to Models directory.
     public class SiteSettings
     {
         public bool RegistrationEnabled { get; set; }

@@ -1,13 +1,10 @@
 ﻿using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Http;
-using System;
-using System.IO;
 using System.Threading.Tasks;
-
 
 //Based on TurboLinks.Net:
 //  https://github.com/TerribleDev/TurboLinks.Net
-namespace Template.TurboLinks
+namespace Template.VueTL.TurboLinks
 {
     public class TurboLinks
     {
@@ -32,10 +29,8 @@ namespace Template.TurboLinks
                     }
                     return Task.FromResult(0);
                 }, context);
-
             }
             await _next(context);
-
         }
     }
 

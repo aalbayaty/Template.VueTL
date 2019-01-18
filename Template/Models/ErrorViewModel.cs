@@ -1,6 +1,4 @@
-using System;
-
-namespace Template.Models
+namespace Template.VueTL.Models
 {
     public class ErrorViewModel
     {

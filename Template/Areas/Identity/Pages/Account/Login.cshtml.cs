@@ -1,17 +1,16 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
-using System.Linq;
-using System.Threading.Tasks;
+﻿using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Authorization;
-using Microsoft.AspNetCore.Authentication;
+using Microsoft.AspNetCore.Http.Extensions;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.Extensions.Logging;
-using Microsoft.AspNetCore.Http.Extensions;
+using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
+using System.Linq;
+using System.Threading.Tasks;
 
-namespace Template.Areas.Identity.Pages.Account
+namespace Template.VueTL.Areas.Identity.Pages.Account
 {
     [AllowAnonymous]
     public class LoginModel : PageModel
@@ -43,7 +42,7 @@ namespace Template.Areas.Identity.Pages.Account
 
             [Required]
             [DataType(DataType.Password)]
-            [Display(Prompt ="Please enter your password")]
+            [Display(Prompt = "Please enter your password")]
             public string Password { get; set; }
 
             [Display(Name = "Remember me?")]

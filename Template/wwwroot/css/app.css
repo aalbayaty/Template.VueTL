@@ -36,7 +36,7 @@
 ******************************************/
 .sidebar {
   background-color: #ffffff;
-  width: 200px;
+  width: 240px;
   padding-bottom: 60px;
   position: absolute;
   top: 0;
@@ -47,7 +47,7 @@
   @media (max-width: 991.98px) {
     .sidebar {
       position: fixed;
-      left: -200px; } }
+      left: -240px; } }
   .sidebar-fixed .sidebar {
     position: fixed; }
   .sidebar-open .sidebar {
@@ -215,7 +215,7 @@
   background-color: #fff;
   height: 50px;
   position: absolute;
-  left: 200px;
+  left: 240px;
   right: 0;
   transition: left 0.3s ease;
   z-index: 10;
@@ -367,7 +367,7 @@
 .app {
   position: relative;
   width: 100%;
-  padding-left: 200px;
+  padding-left: 240px;
   min-height: 100vh;
   margin: 0 auto;
   left: 0;

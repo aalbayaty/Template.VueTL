@@ -1,7 +1,7 @@
-﻿using System;
-using Microsoft.AspNetCore.Mvc.Rendering;
+﻿using Microsoft.AspNetCore.Mvc.Rendering;
+using System;
 
-namespace Template.Areas.Identity.Pages.Account.Manage
+namespace Template.VueTL.Areas.Identity.Pages.Account.Manage
 {
     public static class ManageNavPages
     {
