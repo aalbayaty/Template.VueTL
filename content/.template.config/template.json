@@ -6,7 +6,7 @@
   "name": "ASP.NET Core with Vue.js 2 and turbolinks",
   "shortName": "vuetl",
   "tags": {
-    "language": "C#", // Specify that this template is in C#.
+    "language": "C#",
     "type": "project"
   },
   "sourceName": "Template.VueTL",
